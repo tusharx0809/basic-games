@@ -28,7 +28,18 @@ def play_game():
             print('You Win! Computer chose Paper!')
         else:
             print("It is a Tie!")
-
+def play_again():
+    print("Do you want to Play again?(Y/N)")
+    answer = input("Press Y for Yes and N for No: ")
+    if answer == 'Y' or answer == 'y':
+        return True
+    else:
+        return False
+    
 print("Welcome to Rock Paper Scissor!")
 print("Press R for rock, P for Paper and S for Scissor")
-play_game()
+
+while True:
+    play_game()
+    if not play_again():
+        break
