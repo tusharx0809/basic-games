@@ -57,3 +57,4 @@ while True:
     if not play_again(): #if player chooses not to play, then print the scores and break out of loop
         print("Player Score:", player_score, "Computer Score:", computer_score, "Ties:", ties) 
         break
+input("Press Enter to exit...")
