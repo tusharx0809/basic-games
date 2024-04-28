@@ -47,13 +47,12 @@ def play_again():
     else:
         return False
     
+print("Welcome to Rock Paper Scissor!")
+print("Press R for rock, P for Paper and S for Scissor")
 player_score = 0
 computer_score = 0
 ties = 0
 total_games = 0
-print("Welcome to Rock Paper Scissor!")
-print("Press R for rock, P for Paper and S for Scissor")
-
 while True:
     player_score, computer_score, ties, total_games = play_game(player_score, computer_score, ties, total_games) #call this function to store the value and keep a track of scores
     if not play_again(): #if player chooses not to play, then print the scores and break out of loop
