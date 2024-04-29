@@ -10,7 +10,7 @@ def check_Validity(sudoku_board, row, col, num):
         
     #to check if the number exists in the column    
     for i in range(9):
-        if sudoku_board[j][col] == num:
+        if sudoku_board[i][col] == num:
             return False
         
     #below variables are declared to check the exitence of number in 3x3 square    
@@ -36,5 +36,20 @@ def solve_sudoku_board(sudoku_board):
                         else:
                             sudoku_board[i][j] = 0
                 return False
-    return True            
-                        
+    return True
+
+sudoku_board =  [[0, 0, 0, 2, 0, 4, 0, 8, 0], 
+                 [0, 7, 0, 0, 6, 8, 0, 0, 0], 
+                 [0, 6, 3, 5, 0, 0, 0, 4, 0], 
+                 [0, 0, 6, 0, 1, 0, 4, 3, 0], 
+                 [0, 0, 0, 0, 0, 0, 1, 2, 9], 
+                 [0, 1, 9, 7, 0, 0, 8, 5, 6], 
+                 [6, 3, 4, 0, 5, 9, 0, 7, 0], 
+                 [7, 0, 1, 0, 3, 6, 5, 0, 8], 
+                 [0, 5, 8, 1, 0, 7, 0, 6, 0]]
+#call solve_sudoku_function with passing the value as above board
+solve_sudoku_board(sudoku_board)
+
+#print the solved sudoku puzzle
+for i in range(len(sudoku_board)):
+    print(sudoku_board[i])
