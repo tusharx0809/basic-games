@@ -1,5 +1,7 @@
 """Below is the program to solve a Valid 3x3 Sudoku board - Baord presented as 2D list where each element of list reprsents a row and empty blocks are reprsented by a '0'"""
 
+def generate_sudoku_board():
+    
 #function to check if the number is not already present in row, column or 3x3 inside box
 def check_Validity(sudoku_board, row, col, num):
     
