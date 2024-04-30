@@ -1,4 +1,4 @@
-"""Below is the program to solve a Valid 3x3 Sudoku board - Baord presented as 2D list where each element of list reprsents a row and empty blocks are reprsented by a '0'"""
+"""Below is the program to generate and solve a Valid 3x3 Sudoku board - Baord presented as 2D list where each element of list reprsents a row and empty blocks are reprsented by a '0'"""
 
 import random
 
@@ -8,7 +8,6 @@ def generate_sudoku_board():
     side = base * base
     nums = random.sample(range(1, side + 1), side) #generates a list of random numbers from 1 to 9
     board = [] #initialize an empty board
-
     for r in range(side):
         row = []
         for c in range(side):
@@ -29,8 +28,6 @@ def generate_sudoku_board():
         row, col = position
         board[row][col] = 0
     return board
-
-
 
 #function to check if the number is not already present in row, column or 3x3 inside box
 def check_Validity(sudoku_board, row, col, num):
