@@ -44,15 +44,11 @@ def solve_sudoku_board(sudoku_board):
                 return False
     return True
 
-sudoku_board =  [[0, 0, 0, 2, 0, 4, 0, 8, 0], 
-                 [0, 7, 0, 0, 6, 8, 0, 0, 0], 
-                 [0, 6, 3, 5, 0, 0, 0, 4, 0], 
-                 [0, 0, 6, 0, 1, 0, 4, 3, 0], 
-                 [0, 0, 0, 0, 0, 0, 1, 2, 9], 
-                 [0, 1, 9, 7, 0, 0, 8, 5, 6], 
-                 [6, 3, 4, 0, 5, 9, 0, 7, 0], 
-                 [7, 0, 1, 0, 3, 6, 5, 0, 8], 
-                 [0, 5, 8, 1, 0, 7, 0, 6, 0]]
+sudoku_board =  generate_sudoku_board()
+for i in range(len(sudoku_board)):
+    print(sudoku_board[i])
+
+    
 #call solve_sudoku_function with passing the value as above board
 solve_sudoku_board(sudoku_board)
 
