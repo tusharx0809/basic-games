@@ -17,7 +17,20 @@ def generate_sudoku_board():
             num = nums[idx]
             row.append(num)
         board.append(row)
+    #Now that a solved sudoku board is genereated, we will set 75%of the values to zero to make it unsolved
+    squares = side * side
+    empty_values = squares * 3//4
+    positions = []
+    for i in range(empty_values):
+        row = random.randrange(side)
+        col = random.randrange(side)
+        positions.append((row, col))
+    for position in positions:
+        row, col = position
+        board[row][col] = 0
     return board
+
+
 
 #function to check if the number is not already present in row, column or 3x3 inside box
 def check_Validity(sudoku_board, row, col, num):
