@@ -1,11 +1,23 @@
 """Below is the program to solve a Valid 3x3 Sudoku board - Baord presented as 2D list where each element of list reprsents a row and empty blocks are reprsented by a '0'"""
 
 import random
-def generate_sudoku_board():
+
+#This functions generates a random valid sudoku puzzle
+def generate_sudoku_board(): 
     base = 3
     side = base * base
     nums = random.sample(range(1, side + 1), side) #generates a list of random numbers from 1 to 9
     board = [] #initialize an empty board
+
+    for r in range(side):
+        row = []
+        for c in range(side):
+            idx = (base * (r % base) + r // base + c) % side
+            #above formula is used to fill up each 3x3 inside board
+            num = nums[idx]
+            row.append(num)
+        board.append(row)
+    return board
 
 #function to check if the number is not already present in row, column or 3x3 inside box
 def check_Validity(sudoku_board, row, col, num):
@@ -48,10 +60,10 @@ sudoku_board =  generate_sudoku_board()
 for i in range(len(sudoku_board)):
     print(sudoku_board[i])
 
-    
+
 #call solve_sudoku_function with passing the value as above board
 solve_sudoku_board(sudoku_board)
-
 #print the solved sudoku puzzle
+input("Press Enter to solve above puzzle!")
 for i in range(len(sudoku_board)):
     print(sudoku_board[i])
