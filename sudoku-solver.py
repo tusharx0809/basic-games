@@ -1,12 +1,14 @@
 """Below is the program to solve a Valid 3x3 Sudoku board - Baord presented as 2D list where each element of list reprsents a row and empty blocks are reprsented by a '0'"""
 
+import random
 def generate_sudoku_board():
-    
-#function to check if the number is not already present in row, column or 3x3 inside box
-def check_Validity(sudoku_board, row, col, num):
     base = 3
     side = base * base
-    
+    nums = random.sample(range(1, side + 1), side) #generates a list of random numbers from 1 to 9
+    board = [] #initialize an empty board
+
+#function to check if the number is not already present in row, column or 3x3 inside box
+def check_Validity(sudoku_board, row, col, num):
     #to check if the number is present in row
     for i in range(9):
         if sudoku_board[row][i] == num:
