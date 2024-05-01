@@ -16,6 +16,27 @@ def generate_sudoku_board():
             num = nums[idx]
             row.append(num)
         board.append(row)
+    #shuffling the generated sudoku board to generate more confusing puzzles
+    rows = []
+    cols = []
+
+    for g in random.sample(range(base), base):
+        for r in random.sample(range(g*base, (g+1)*base),base):
+            rows.append(r)
+    for g in random.sample(range(base), base):
+        for c in random.sample(range(g*base, (g+1)*base),base):
+            cols.append(c)
+    
+    shuffled_board = []
+
+    for r in rows:
+        row = []
+        for c in cols:
+            cell = board[r][c]
+            row.append(cell)
+        shuffled_board.append(row)
+    board = shuffled_board    
+    
     #Now that a solved sudoku board is genereated, we will set 75%of the values to zero to make it unsolved
     squares = side * side
     empty_values = squares * 3//4
