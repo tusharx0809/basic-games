@@ -5,4 +5,6 @@
 # created sudoku solver, next time i am going to create another branch to test the generation of random sudoku and then solve
 # added generate functionality in sudoku solver, next I will add shuffling of the numbers to generate more complex puzzles
 # added shufflin of borad to make the puzzles more confusing
+# deleted generate-sudoku-branch after testing completed
+
 
